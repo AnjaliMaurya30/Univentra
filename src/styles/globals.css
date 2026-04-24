@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color: #333333;
+    background: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply border-surface-soft;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(255, 184, 0, 0.18), transparent 24%),
+      radial-gradient(circle at 90% 10%, rgba(122, 77, 255, 0.14), transparent 24%),
+      radial-gradient(circle at 60% 90%, rgba(73, 214, 255, 0.14), transparent 26%);
+    background-attachment: fixed;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply outline-none;
+  }
+
+  ::selection {
+    background: rgba(255, 184, 0, 0.32);
+  }
+}
+
+@layer utilities {
+  .text-gradient-warm {
+    background: linear-gradient(135deg, #ffb800 0%, #ff8a00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-pop {
+    background: linear-gradient(135deg, #7a4dff 0%, #ff4dba 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .surface-card {
+    @apply rounded-[28px] border border-white/60 bg-white/90 shadow-card backdrop-blur-sm;
+  }
+
+  .surface-panel {
+    @apply rounded-[32px] border border-white/80 bg-white/85 shadow-soft backdrop-blur-sm;
+  }
+
+  .grid-ambient {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.55) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .glow-ring {
+    box-shadow:
+      0 10px 30px rgba(255, 184, 0, 0.18),
+      0 0 0 1px rgba(255, 184, 0, 0.2);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(51, 51, 51, 0.2) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(51, 51, 51, 0.15);
+    border-radius: 9999px;
+  }
+}
